@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  height: 1
+  width: 1
+  depth: 1
+  Status_id: 
+  Gallery_id: 
+  Technique_id: 
+
+two:
+  name: MyString
+  description: MyText
+  height: 1
+  width: 1
+  depth: 1
+  Status_id: 
+  Gallery_id: 
+  Technique_id: 

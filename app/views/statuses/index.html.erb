@@ -1,0 +1,14 @@
+<h1>Status</h1>
+
+<table>
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= link_to status.name, edit_status_path(status) %></td>
+        <td><%= button_to 'Ta bort', status, method: :delete, data: { confirm: 'Är du säker?' }, :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Ny status', new_status_path %>

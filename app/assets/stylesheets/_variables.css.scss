@@ -1,0 +1,57 @@
+/* Body layout*/
+$bodyBackgroundColor: #fff;
+$bodyTextColor: #333;
+$bodyWidth: 960px;
+$fontFamily: 'Josefin Slab', serif;
+$fontSize: 16px;
+$fontColor: #000;
+$borderShadow: 10px 10px 5px #000;
+
+/* Headers */
+$h1FontSize: 36px;
+$headerFontFamily: 'Josefin Slab', serif;
+$headerFontSize: 50px;
+$headerUserFontSize: 30px;
+$articleBackgroundColor: #FFF;
+$textFieldColor: #E5F3FF;
+
+/* Menu */
+$menuBackgroundColor: #80BFFF;
+$menuBorderColor: #000;
+$menuBoxShadowColor: #888;
+$menuHoverColor: $menuBackgroundColor;
+$menuHoverFontSize: 160%;
+$menuFontSize: 140%;
+$menuBorderShadow: $borderShadow; 
+$h1MenuFontFamily: $fontFamily;
+
+/* Drop down */
+$dropdownHoverBackgroundHover: $menuBackgroundColor;
+$dropDownFontSize: 140%; 
+$dropDownHoverFontSize: 160%;
+
+/* Accordion */
+$accordionBackgroundColor: #FFFFCC;
+$accordionFontSize: 120%;
+$accordionBorderShadow: $menuBorderShadow;
+
+/* Tab control */
+$tabContentBackgroundColor: #fff;
+
+/*Buttons */
+$btnSaveColor: rgb(73, 175, 205);
+$btnWarningColor: rgb(218, 78, 73);
+$btnAlertColor: rgb(255, 196, 79);
+
+/* Simple form */
+$sfLabelWidth: 100px;
+$sfInputMarginLeft: 120px;
+$sfMarginBottom: 10px;
+
+/*Diary */
+$diaryHeaderFont: $fontFamily;
+$diaryHeaderColor: $fontColor;
+$diaryTextColor: $fontColor;
+
+/* Table */
+$tableBorder: 1px solid rgb(146, 172, 185);

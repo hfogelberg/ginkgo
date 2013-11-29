@@ -1,0 +1,14 @@
+<h1>Tekniker</h1>
+
+<table>
+  <tbody>
+    <% @techniques.each do |technique| %>
+      <tr>
+        <td><%= link_to technique.name, edit_technique_path(technique) %></td>
+        <td><%= button_to 'Ta bort', technique, method: :delete, data: { confirm: 'Är du säker?' }, :class=>'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Ny teknik', new_technique_path %>
