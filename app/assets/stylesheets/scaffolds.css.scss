@@ -67,3 +67,28 @@ div {
     list-style: square;
   }
 }
+
+.col-center{
+  margin:0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.header-cont {
+    width:100%;
+    position:fixed;
+    top:0px;
+}
+
+#grid  {
+  float:left; 
+  width:30%; 
+  padding-right:15px; 
+  line-height:150px; 
+}
+
+#grid img {
+  vertical-align:middle;
+}

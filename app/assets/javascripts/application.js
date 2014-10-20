@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require_tree .
 //= require jquery_ujs
+//= require coffeeflow
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require turbolinks

@@ -1,4 +1,15 @@
 Ginkgo::Application.routes.draw do
+
+  resources :order_infos
+
+  resources :illustrations
+
+  resources :contacts
+
+  get "faq/show"
+  get "about_me/show"
+  resources :news
+
   resources :artworks
 
   root 'welcomes#index'
@@ -11,7 +22,18 @@ Ginkgo::Application.routes.draw do
 
   resources :galleries
 
+  resources :contacts
+
   get 'index' => 'artworks#gallery_index'
+
+  get 'about_me' => 'about_me#show'
+
+  get 'faq' => 'faq#show'
+
+  resources :artworks do 
+    resources :contacts
+  end
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -44,6 +44,12 @@ gem 'carrierwave'
 # To resize images 
 gem 'mini_magick'
 
+# Use Twitter Bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+
+# Automatically add vendor prefixes
+gem 'autoprefixer-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

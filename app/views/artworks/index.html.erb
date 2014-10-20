@@ -1,29 +1,8 @@
-<h1>Konstverk</h1>
 
-<table class='table table-bordered table-hover'>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Namn</th>
-      <th>Status</th>
-      <th>Galleri</th>
-      <th>Teknik</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @artworks.each do |artwork| %>
-      <tr>
-        <td><%= link_to (image_tag artwork.image.thumb.to_s), edit_artwork_path(artwork) unless artwork.image.blank? %></td>
-        <td><%= link_to artwork.name, edit_artwork_path(artwork) %></td>
-        <td><%=link_to artwork.Status.name, edit_artwork_path(artwork) unless artwork.Status.blank? %></td>
-        <td><%= link_to artwork.Gallery.name, edit_artwork_path(artwork) unless artwork.Gallery.blank? %></td>
-        <td><%= link_to artwork.Technique.name, edit_artwork_path(artwork) unless artwork.Technique.blank? %></td>
-        <td><%= button_to 'Ta bort', artwork, method: :delete, data: { confirm: 'Är du säker?' }, :class=>'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section id="photos">
+  <% @artworks.each do |artwork| %>
+    <%= link_to (image_tag artwork.image.thumb.to_s), artwork_path(artwork) unless artwork.image.blank? %>
+  <% end %>
+</section>
 <br>
 <%= link_to 'Nytt konstverk', new_artwork_path %>

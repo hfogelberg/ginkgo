@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ginkgo</title>
+  <title>Helena Fogelberg</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='text-center'>
+    <h1>Helena Fogelberg</h1>
+    <h3>Art and Design</h3>
+    <br />
+  </div>
 	<%= render 'partials/menu' %>
-	<%= yield %>
+    <div id="main-container" class="container">
+      <div class="row">
+        <div id="sidebar" class="col-xs-1">
+          <!-- sidebar content -->
+        </div>
+        <div id="content" class="col-xs-11" class="col-center">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

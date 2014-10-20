@@ -11,29 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129070452) do
+ActiveRecord::Schema.define(version: 20141020112820) do
 
-  create_table "artworks", force: true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "height"
-    t.integer  "width"
-    t.integer  "depth"
-    t.integer  "Status_id"
-    t.integer  "Gallery_id"
-    t.integer  "Technique_id"
+# Could not dump table "artworks" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+  create_table "contacts", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
-    t.text     "header"
+    t.integer  "artwork_id"
   end
-
-  add_index "artworks", ["Gallery_id"], name: "index_artworks_on_Gallery_id"
-  add_index "artworks", ["Status_id"], name: "index_artworks_on_Status_id"
-  add_index "artworks", ["Technique_id"], name: "index_artworks_on_Technique_id"
 
   create_table "galleries", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "illustrations", force: true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", force: true do |t|
+    t.string   "header"
+    t.text     "body",       limit: 255
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_infos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

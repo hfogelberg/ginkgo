@@ -11,13 +11,21 @@
     <%= f.association :Status, :label=>'Status' %>
     <%= f.association :Gallery, :label=>'Galleri' %>
     <%= f.association :Technique, :label=>'Teknik' %>
+    <%= f.input :price, :label=>'Pris', :as=>:string %>
+    <%= f.input :print_path, :label=>'Prints' %>
     <%= f.file_field :image, :label=>'Fil' %>
+    <p>
+      <%= f.input :on_startpage, :label=>'På startsidan', :as=>:boolean %>
+    <p>
   </div>
-
-   <div class="form-actions">
-    <%= button_to 'Åter', galleries_path, :class=>'btn btn-primary' %>
-    <%= f.submit 'Spara', :class=>'btn btn-primary' %>
-  </div>
+  <br>
+  <br>
+  <p>
+    <div class="form-actions">
+      <%= button_to 'Avbryt', galleries_path, :class=>'btn btn-primary' %>
+      <%= f.submit 'Spara', :class=>'btn btn-primary' %>
+    </div>
+  <p>
 <% end %>
 
 <% # jquery upload template # %>

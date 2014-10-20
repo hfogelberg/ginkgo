@@ -46,7 +46,6 @@ class ArtworksController < ApplicationController
   # PATCH/PUT /artworks/1
   # PATCH/PUT /artworks/1.json
   def update
-    logger.debug "Updating artwork: #{@artwork.image}"
     respond_to do |format|
       if @artwork.update(artwork_params)
         format.html { redirect_to artworks_url }
@@ -76,6 +75,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:name, :description, :height, :width, :depth, :Status_id, :Gallery_id, :Technique_id, :image)
+      params.require(:artwork).permit(:name, :description, :height, :width, :depth, :Status_id, :Gallery_id, :Technique_id, :image, :header, :print_path, :price, :Contact_id)
     end
 end
