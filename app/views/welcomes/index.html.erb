@@ -8,4 +8,9 @@
 		<%= link_to 'Välkommen!', artworks_path, :class=>'btn btn-primary btn-lg' %>
 	</p>
 	<br>
+	<section id="photos">
+  <% @artworks.each do |artwork| %>
+    <%= link_to (image_tag artwork.image.thumb.to_s), artwork_path(artwork) unless artwork.image.blank? %>
+  <% end %>
+</section>
 </div>

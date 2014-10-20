@@ -5,7 +5,6 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
   def index
-    @paintings = Artwork.order("RANDOM()").limit(3)
-    @galleries = Gallery.all
+    @artworks = Artwork.order("RANDOM()).limit(15)
   end
 end
