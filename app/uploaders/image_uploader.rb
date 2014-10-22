@@ -25,6 +25,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   process :resize_to_fit => [900, 600]
+
+  version :medium do
+    process :resize_to_limit => [480, 320]
+  end
   
   version :thumb do
     process :resize_to_limit => [240, 160]

@@ -1,16 +1,15 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_user!
 
   # GET /artworks
   # GET /artworks.json
   def index
-    @artworks = Artwork.all
-  end
-
-  # GET /gallery_index
-  # GET /gallery_index.json
-  def gallery_index
-    @artworks = Artwork.all
+    if params[:collectionId].blank?
+      @artworks = Artwork.all
+    else
+      @artworks = Artwork.where(:Collection_id => params[:collectionId])
+    end
   end
 
   # GET /artworks/1
@@ -34,7 +33,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.save
-        format.html { redirect_to artworks_url }
+        format.html { redirect_to @artwork, notice: 'Konstverket uppdaterat.' }
         format.json { render action: 'show', status: :created, location: @artwork }
       else
         format.html { render action: 'new' }
@@ -48,7 +47,7 @@ class ArtworksController < ApplicationController
   def update
     respond_to do |format|
       if @artwork.update(artwork_params)
-        format.html { redirect_to artworks_url }
+        format.html { redirect_to @artwork, notice: 'Artwork was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,6 +74,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:name, :description, :height, :width, :depth, :Status_id, :Gallery_id, :Technique_id, :image, :header, :print_path, :price, :Contact_id)
+      params.require(:artwork).permit(:name, :description, :height, :width, :Collection_id, :Technique_id, :Material_id, :price, :for_sale, :image)
     end
 end

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
 
+<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
 <p>
 <h1>
     <%= @artwork.name %>
@@ -10,22 +10,30 @@
 <%= @artwork.description %>
 </p>
 
-<p>
-  <%= @artwork.height %> * <%= @artwork.width %> cm
+<% if !@artwork.height.blank? && !@artwork.width.blank? %>
+  <p><%= @artwork.height %> * <%= @artwork.width %> cm</p>
+<% end %>
+
+<p> 
+  <% unless @artwork.Technique.blank? %>
+    <%= @artwork.Technique.name %> 
+    <% unless @artwork.Material.blank? %>
+      på <%= @artwork.Material.name %>
+    <% end %>
+  <% end %>
 </p>
 
 <p>
-  <%= @artwork.Technique.name %>
+  <% if @artwork.for_sale == 1 && @artwork.price > 0 %>
+    <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
+  <% else %>
+    <div class="text-danger">Såld</div>
+  <% end %>
 </p>
 
-<p>
-  <strong><%= @artwork.Status.name %></strong>
-</p>
+<% if user_signed_in? %>
+  <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
+<% end %>
 
-<p>
-  <strong>Pris </strong><%= @artwork.price %> Kr
-</p>
-
-<%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
 <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <br /><br /><br />

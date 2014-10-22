@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Helena Fogelberg</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+    <div id="main-container" class="container">
+      <div class="row">
+        <div id="sidebar" class="col-xs-1"></div>
+        <div id="content" class="col-xs-10" class="col-center">
+          <%= yield %>
+        </div>
+      </div>
+      <div id="sidebar" class="col-xs-1"></div>
+    </div>
+</body>
+</html>

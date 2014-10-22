@@ -1,5 +1,12 @@
 Ginkgo::Application.routes.draw do
 
+  devise_for :users
+  resources :artworks
+
+  resources :collections
+
+  resources :materials
+
   resources :order_infos
 
   resources :illustrations
@@ -10,8 +17,6 @@ Ginkgo::Application.routes.draw do
   get "about_me/show"
   resources :news
 
-  resources :artworks
-
   root 'welcomes#index'
 
   resources :welcomes
@@ -19,8 +24,6 @@ Ginkgo::Application.routes.draw do
   resources :statuses
 
   resources :techniques
-
-  resources :galleries
 
   resources :contacts
 
@@ -30,9 +33,9 @@ Ginkgo::Application.routes.draw do
 
   get 'faq' => 'faq#show'
 
-  resources :artworks do 
-    resources :contacts
-  end
+  #resources :artworks do 
+  #  resources :contacts
+  #end
  
 
   # The priority is based upon order of creation: first created -> highest priority.

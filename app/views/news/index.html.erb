@@ -1,0 +1,29 @@
+<h1>Nyheter</h1>
+
+<table>
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td>
+          <p>
+            <h1><%= news.header %></h1>
+          </p>
+           <p>
+            <%= image_tag news.image.thumb.to_s %>
+          </p>
+          <p>
+            <%= news.body %>
+          </p>
+          <p>
+            <%= link_to 'Ändra', edit_news_path(news) %>
+            <%= link_to 'Ta bort', news, method: :delete, data: { confirm: 'Är du säker?' } %>
+          <p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Lägg till', new_news_path %>

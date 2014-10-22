@@ -1,0 +1,21 @@
+<h1>Illustrationer</h1>
+
+<p>
+  Behöver du hjälp med illustrationer? Kanske till till ett reklamblad, ditt företag eller en bok. Kontakta i så fall mig!
+</p>
+<p>
+  Jag arbetar själv sedan en tid med en barnbok. Boken är inte färdig än, men jag kan bjuda på några smakprov på bilderna.
+</p>
+<p>
+  <tbody>
+    <% @illustrations.each do |illustration| %>
+      <tr>
+        <td>illustration</td>
+        <td><%= link_to 'Ta bort', illustration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</p>
+<br>
+<%= link_to 'Lägg till', new_illustration_path %>

@@ -5,17 +5,21 @@ one:
   description: MyText
   height: 1
   width: 1
-  depth: 1
-  Status_id: 
-  Gallery_id: 
+  Collection_id: 
   Technique_id: 
+  Material_id: 
+  price: 1
+  for_sale: false
+  image: MyString
 
 two:
   name: MyString
   description: MyText
   height: 1
   width: 1
-  depth: 1
-  Status_id: 
-  Gallery_id: 
+  Collection_id: 
   Technique_id: 
+  Material_id: 
+  price: 1
+  for_sale: false
+  image: MyString

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Förnamn:</strong>
+  <%= @contact.first_name %>
+</p>
+
+<p>
+  <strong>Efternamn:</strong>
+  <%= @contact.last_name %>
+</p>
+
+<p>
+  <strong>E-post:</strong>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @contact.phone %>
+</p>
+
+<p>
+  <strong>Meddelande:</strong>
+  <%= @contact.message %>
+</p>
+
+<%= link_to 'Avbryt', contacts_path %>

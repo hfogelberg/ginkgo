@@ -1,32 +1,24 @@
-<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
-<%= simple_form_for @artwork, :html => {:multipart => true}  do |f| %>
+<%= simple_form_for(@artwork) do |f| %>
   <%= f.error_notification %>
+
   <div class="form-inputs">
     <%= f.input :name, :label=>'Namn' %>
-    <%= f.input :header, :label=>'Ingress', :input_html => {:rows=>3} %>
-    <%= f.input :description, :label=>'Beskrivning', :input_html => {:rows=>10} %>
-    <%= f.input :height, :label=>'Höjd', :as=>:string %>
-    <%= f.input :width, :label=>'Bredd', :as=>:string %>
-    <%= f.input :depth, :label=>'Djup', :as=>:string %>
-    <%= f.association :Status, :label=>'Status' %>
-    <%= f.association :Gallery, :label=>'Galleri' %>
+    <%= f.input :description, :label=>'Beskrivning', :input_html => { 'rows' => 5, 'cols' => 40 } %>
+    <%= f.input :height, :label=>'Höjd', :as=>'string' %>
+    <%= f.input :width, :label=>'Bredd', :as=>'string' %>
+    <%= f.association :Collection, :label=>'Galleri' %>
     <%= f.association :Technique, :label=>'Teknik' %>
-    <%= f.input :price, :label=>'Pris', :as=>:string %>
-    <%= f.input :print_path, :label=>'Prints' %>
-    <%= f.file_field :image, :label=>'Fil' %>
-    <p>
-      <%= f.input :on_startpage, :label=>'På startsidan', :as=>:boolean %>
-    <p>
+    <%= f.association :Material, :label=>'Material' %>
+    <%= f.input :price, :label=>'Pris' %>
+    <%= f.input :for_sale, :label=>'Till salu' %><br /><br />
+    <%= f.file_field :image, :label=>'Bild' %>
   </div>
-  <br>
-  <br>
-  <p>
-    <div class="form-actions">
-      <%= button_to 'Avbryt', galleries_path, :class=>'btn btn-primary' %>
-      <%= f.submit 'Spara', :class=>'btn btn-primary' %>
-    </div>
-  <p>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Spara', :class=>'btn btn-primary' %>
+  </div>
 <% end %>
+
 
 <% # jquery upload template # %>
 <script id="template-upload" type="text/x-tmpl"><div class="upload">{%=o.name%}<div class="progress"><div class="bar" style="width: 0%"></div></div></div></script>

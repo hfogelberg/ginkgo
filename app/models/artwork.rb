@@ -1,8 +1,7 @@
 class Artwork < ActiveRecord::Base
-  belongs_to :Status
-  belongs_to :Gallery
+  belongs_to :Collection
   belongs_to :Technique
-  has_many :Contacts
-	
+  belongs_to :Material
+
   mount_uploader :image, ImageUploader
 end
