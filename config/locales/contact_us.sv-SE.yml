@@ -1,0 +1,25 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+sv-SE:
+  contact_us:
+    contact_mailer:
+      contact_email:
+        sent_by_contact_form: "Sänt via kontaktformulär från %{email}"
+        sent_by_name: "Skickat av %{name} från %{email}"
+        subject: "Kontakta oss meddelande från %{email}"
+    contacts:
+      new: &new
+        contact_us: "Kontakta oss"
+        email: "E-post"
+        message: "Text"
+        name: "Namn"
+        subject: "Ämne"
+        submit: "Skicka"
+      new_formtastic:
+        <<: *new
+      new_simple_form:
+        <<: *new
+    notices:
+      error: "Du måste ange e-post adress och meddelande."
+      success: "Meddelandet skickat."

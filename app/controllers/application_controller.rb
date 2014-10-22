@@ -4,9 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :get_collections
+  before_filter :set_user_language
 
   def get_collections
   	@collections = Collection.all
+  end
+
+  def set_user_language
+  	I18n.locale = 'sv-SE'
   end
 
 end

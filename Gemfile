@@ -53,6 +53,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 # Automatically add vendor prefixes
 gem 'autoprefixer-rails'
 
+# Contact form
+gem 'contact_us', '~> 0.5.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -11,8 +11,6 @@ Ginkgo::Application.routes.draw do
 
   resources :illustrations
 
-  resources :contacts
-
   get "faq/show"
   get "about_me/show"
   resources :news
@@ -24,8 +22,6 @@ Ginkgo::Application.routes.draw do
   resources :statuses
 
   resources :techniques
-
-  resources :contacts
 
   get 'index' => 'artworks#gallery_index'
 
