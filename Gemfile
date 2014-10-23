@@ -56,6 +56,9 @@ gem 'autoprefixer-rails'
 # Contact form
 gem 'contact_us', '~> 0.5.1'
 
+# Used for storing images at Google
+gem 'fog'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
