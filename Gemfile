@@ -4,8 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+#gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -55,7 +55,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 # Contact form
-gem 'contact_us', '~> 0.5.1'
+#gem 'contact_us', '~> 0.5.1'
 
 # Used for storing images at Google
 gem 'fog'
