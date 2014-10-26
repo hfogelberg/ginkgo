@@ -5,7 +5,6 @@
     <% @materials.each do |material| %>
       <tr>
         <td><%= link_to material.name, edit_material_path(material) %></td>
-        <td><%= link_to 'Ta  bort', material, method: :delete, data: { confirm: 'Är du säker?' } %></td>
       </tr>
     <% end %>
   </tbody>
