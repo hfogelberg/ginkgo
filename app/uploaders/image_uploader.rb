@@ -17,10 +17,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def watermark
-manipulate! do |img|
-  logo = Magick::Image.read("#{Rails.root}/assets/images/watermark.png").first
-  img = img.composite(logo, Magick::SouthEastGravity, Magick::OverCompositeOp)
-end
+    manipulate! do |img|
+      logo = Magick::Image.read("#{Rails.root}/assets/images/watermark.png").first
+      img = img.composite(logo, Magick::SouthEastGravity, Magick::OverCompositeOp)
+    end
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

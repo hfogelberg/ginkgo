@@ -24,7 +24,7 @@
 </p>
 
 <p>
-  <% if @artwork.for_sale == true && @artwork.price > 0 %>
+  <% if @artwork.for_sale == true %>
     <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
   <% else %>
     <div class="text-danger">Såld</div>
