@@ -60,6 +60,12 @@ gem 'contact_us', '~> 0.5.1'
 # Used for storing images at Google
 gem 'fog'
 
+group :production do
+  gem 'rails_12factor'
+end
+
+ruby "2.1.1"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
