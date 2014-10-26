@@ -2,7 +2,7 @@
 <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <br />
 <br />
-<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
+<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.standard.to_s %><% end %>
 <p>
 <h1>
     <%= @artwork.name %>
