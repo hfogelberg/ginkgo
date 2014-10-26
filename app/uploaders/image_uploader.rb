@@ -32,6 +32,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   process :resize_to_fit => [900, 600]
+  process :watermark
 
   version :medium do
     process :resize_to_limit => [480, 320]
