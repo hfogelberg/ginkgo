@@ -17,6 +17,28 @@ class ArtworksController < ApplicationController
   def show
   end
 
+  def get_next
+    id = params[:id]
+
+    if params[:collectionId].blank?
+      @artwork = Artwork.where("id > ?", id).first
+    else
+      collectionId = params[:collectionId]
+      @artwork = Artwork.where(:Collection_id=>1).where("id>?", collectionId).first
+    end
+  end
+
+  def get_next
+    id = params[:id]
+
+    if params[:collectionId].blank?
+      @artwork = Artwork.where("id > ?", id).last
+    else
+      collectionId = params[:collectionId]
+      @artwork = Artwork.where(:Collection_id=>1).where("id<?", collectionId).last
+    end
+  end
+
   # GET /artworks/new
   def new
     @artwork = Artwork.new
