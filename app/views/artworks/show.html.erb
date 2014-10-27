@@ -2,11 +2,13 @@
 <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <br />
 <br />
-<% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
-<p>
 <h1>
     <%= @artwork.name %>
 </h1>
+<p>
+  <% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
+  <br />
+  <div class="fb-like" data-href="http://www.helenafogelberg.se/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </p>
 <p><%= @artwork.description %></p>
 
@@ -26,8 +28,6 @@
 <p>
   <% if @artwork.for_sale == true %>
     <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
-  <% else %>
-    <div class="text-danger">Såld</div>
   <% end %>
 </p>
 

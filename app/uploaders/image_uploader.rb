@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
+  #storage :file
   storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -17,10 +17,26 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def watermark
-    manipulate! do |img|
-      logo = Magick::Image.read("#{Rails.root}/assets/images/watermark.png").first
-      img = img.composite(logo, Magick::SouthEastGravity, Magick::OverCompositeOp)
-    end
+
+    manipulate! do |img| 
+      logo = MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermark.png")
+      img = img.composite(logo) 
+    end 
+ 
+
+    #manipulate! do |img|
+    #  logo = MiniMagick::Image.open("#{Rails.root}/app/assets/images/watermark.png")
+    #  img = img.composite(logo, MiniMagick::SouthEastGravity, MiniMagick::OverCompositeOp)
+    #end
+
+
+    #manipulate! do |img|
+    #  #logo = MiniMagick::Image.read("#{Rails.root}/assets/images/watermark.png").first
+    #  #img = img.composite(logo, Magick::SouthEastGravity, Magick::OverCompositeOp)
+    #  result = img.composite(img.open("#{Rails.root}/assets/images/watermark.png", "jpg")) do |c|
+    #    c.gravity "center"
+    #  end
+    #end
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -31,10 +47,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  version :standard do
-    process :resize_to_fit => [900, 600]
-    process :watermark
-  end
+
+  process :resize_to_fit => [900, 600]
+
+  #version :standard do
+  #  process :resize_to_fit => [900, 600]
+  #  process :watermark
+  #end
 
   version :medium do
     process :resize_to_limit => [480, 320]
