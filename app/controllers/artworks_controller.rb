@@ -1,6 +1,5 @@
 class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /artworks
   # GET /artworks.json

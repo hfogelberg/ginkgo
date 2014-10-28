@@ -1,6 +1,5 @@
 class TechniquesController < ApplicationController
   before_action :set_technique, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   
   # GET /techniques
   # GET /techniques.json

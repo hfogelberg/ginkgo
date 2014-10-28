@@ -1,7 +1,6 @@
 class IllustrationsController < ApplicationController
   before_action :set_illustration, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-
+ 
   # GET /illustrations
   # GET /illustrations.json
   def index
