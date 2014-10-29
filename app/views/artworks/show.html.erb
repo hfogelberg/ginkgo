@@ -35,5 +35,9 @@
   <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
 <% end %>
 
-<%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
+<% if !@artwork.Collection_id.blank? %>
+  <%= link_to 'Åter', artworks_path(:collectionId => @artwork.Collection_id) %>
+<% else %>
+  <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
+<% end %>
 <br /><br /><br />

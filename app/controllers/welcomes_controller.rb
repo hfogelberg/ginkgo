@@ -5,6 +5,6 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
   def index
-    @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(15)
+    @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(8)
   end
 end

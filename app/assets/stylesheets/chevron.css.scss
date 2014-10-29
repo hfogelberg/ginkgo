@@ -1,0 +1,68 @@
+
+#chevron-container {
+  position: relative;
+  text-align: right;
+  height:50px;
+  width: 50px;
+  float: left;
+  top:25px;    
+  left: 45%;
+  margin-right:5%;
+}
+.arrow {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.arrow::before {
+  color: #fff;
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: '';
+  display: inline-block;
+  height: 0.45em;
+  width: 0.45em;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.arrow.left:before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.arrow.right:before {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+    
+}
+.circle {
+  display: table;
+  float: left;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  border: solid 2px #fff;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
+  -moz-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
+  -o-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
+  transition: all 200ms ease-in-out;
+  box-sizing: border-box;
+}
+.circle:hover {
+  border: solid 2px #416ffa;
+  color: #416ffa;
+}
