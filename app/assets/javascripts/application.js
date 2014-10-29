@@ -15,5 +15,5 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require turbolinks
-//= require_tree .
 //= require spamspan
+//= require_tree .
