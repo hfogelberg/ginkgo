@@ -1,14 +1,9 @@
 <h1>Gallerier</h1>
 
-  <tbody>
+  <ul>
     <% @collections.each do |collection| %>
-      <tr>
-        <td><%= link_to collection.name, edit_collection_path(collection) %></td>
-      </tr>
+      <li><%= link_to collection.name, edit_collection_path(collection) %></li>
     <% end %>
-  </tbody>
-</table>
-
+  </ul>
 <br>
-
 <%= link_to 'Ny samling', new_collection_path %>

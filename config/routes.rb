@@ -1,4 +1,5 @@
 Ginkgo::Application.routes.draw do
+  resources :contacts
 
   devise_for :users
   as :user do

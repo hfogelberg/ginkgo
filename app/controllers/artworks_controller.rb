@@ -3,9 +3,10 @@ class ArtworksController < ApplicationController
 
   # GET /artworks
   # GET /artworks.json
-  def index
+  def index    
     if params[:collectionId].blank?
-      @artworks = Artwork.all
+      #@artworks = Artwork.all
+      @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(16)
     else
       @artworks = Artwork.where(:Collection_id => params[:collectionId])
     end
