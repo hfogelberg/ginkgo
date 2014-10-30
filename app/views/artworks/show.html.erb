@@ -36,7 +36,7 @@
 <% end %>
 
 <% if !@artwork.Collection_id.blank? %>
-  <%= link_to 'Åter', artworks_path(:collectionId => @artwork.Collection_id) %>
+  <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <% else %>
   <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <% end %>
