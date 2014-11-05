@@ -4,12 +4,12 @@
   <div class="form-inputs">
     <%= f.input :name, :label=>'Namn' %>
     <%= f.input :description, :label=>'Beskrivning', :input_html => { 'rows' => 5, 'cols' => 40 } %>
-    <%= f.input :height, :label=>'Höjd', :as=>'string' %>
-    <%= f.input :width, :label=>'Bredd', :as=>'string' %>
+    <%= f.input :height, :label=>'Höjd', :as=>:string %>
+    <%= f.input :width, :label=>'Bredd', :as=>:string %>
     <%= f.association :Collection, :label=>'Galleri' %>
     <%= f.association :Technique, :label=>'Teknik' %>
     <%= f.association :Material, :label=>'Material' %>
-    <%= f.input :price, :label=>'Pris' %>
+    <%= f.input :price, :label=>'Pris', :as=>:string %>
     <%= f.input :for_sale, :label=>'Till salu' %><br /><br />
     <%= f.file_field :image, :label=>'Bild' %>
   </div>

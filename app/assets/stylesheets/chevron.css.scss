@@ -1,68 +1,77 @@
-
-#chevron-container {
+#chevron {
   position: relative;
-  text-align: right;
-  height:50px;
-  width: 50px;
-  float: left;
-  top:25px;    
-  left: 45%;
-  margin-right:5%;
+  padding: 12px;
+  height:100px;
+  width: 10px;
+  margin-left:50px;
+  margin-top:30px;
 }
-.arrow {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-.arrow::before {
-  color: #fff;
-  border-style: solid;
-  border-width: 0.25em 0.25em 0 0;
+
+#chevron:before {
   content: '';
-  display: inline-block;
-  height: 0.45em;
-  width: 0.45em;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: gray;
+  -webkit-transform: skew(25deg, 0deg);
+  -moz-transform: skew(25deg, 0deg);
+  -ms-transform: skew(25deg, 0deg);
+  -o-transform: skew(25deg, 0deg);
+  transform: skew(25deg, 0deg);
 }
-.arrow.left:before {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+
+#chevron:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 50%;
+  width: 100%;
+  background: gray;
+  -webkit-transform: skew(-25deg, 0deg);
+  -moz-transform: skew(-25deg, 0deg);
+  -ms-transform: skew(-25deg, 0deg);
+  -o-transform: skew(-25deg, 0deg);
+  transform: skew(-25deg, 0deg);
 }
-.arrow.right:before {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-    
+
+#chevronleft {
+  position: relative;
+  padding: 12px;
+  height: 100px;
+  width: 10px;
+  margin-left:50px;
+  margin-top:30px;
 }
-.circle {
-  display: table;
-  float: left;
-  -moz-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-  border: solid 2px #fff;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
-  -moz-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
-  -o-transition: all 200ms ease, all 500ms ease, all 1013ms ease;
-  transition: all 200ms ease-in-out;
-  box-sizing: border-box;
+
+#chevronleft:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: gray;
+  -webkit-transform: skew(-25deg, 0deg);
+  -moz-transform: skew(-25deg, 0deg);
+  -ms-transform: skew(-25deg, 0deg);
+  -o-transform: skew(-25deg, 0deg);
+  transform: skew(-25deg, 0deg);
 }
-.circle:hover {
-  border: solid 2px #416ffa;
-  color: #416ffa;
+
+#chevronleft:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 50%;
+  width: 100%;
+  background: gray;
+  -webkit-transform: skew(25deg, 0deg);
+  -moz-transform: skew(25deg, 0deg);
+  -ms-transform: skew(25deg, 0deg);
+  -o-transform: skew(25deg, 0deg);
+  transform: skew(25deg, 0deg);
 }

@@ -15,27 +15,30 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.json
   def show
+    @next_artwork = get_next
+    @previous_artwork = get_previous
+    @fbLink = "http://helenafogelberg.se/artworks/{@artwork.id}"
   end
 
   def get_next
     id = params[:id]
 
     if params[:collectionId].blank?
-      @artwork = Artwork.where("id > ?", id).first
+      Artwork.where("id > ?", id).first
     else
       collectionId = params[:collectionId]
-      @artwork = Artwork.where(:Collection_id=>1).where("id>?", collectionId).first
+      Artwork.where(:Collection_id=>1).where("id>?", collectionId).first
     end
   end
 
-  def get_next
+  def get_previous
     id = params[:id]
 
     if params[:collectionId].blank?
-      @artwork = Artwork.where("id > ?", id).last
+      Artwork.where("id < ?", id).last
     else
       collectionId = params[:collectionId]
-      @artwork = Artwork.where(:Collection_id=>1).where("id<?", collectionId).last
+      Artwork.where(:Collection_id=>1).where("id<?", collectionId).last
     end
   end
 

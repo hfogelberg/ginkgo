@@ -1,43 +1,51 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
 <br />
-<br />
-<h1>
-    <%= @artwork.name %>
-</h1>
 <p>
-  <% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
-  <br />
-  <div class="fb-like" data-href="http://www.helenafogelberg.se/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-</p>
-<p><%= @artwork.description %></p>
-
-<% if !@artwork.height.blank? && !@artwork.width.blank? %>
-  <p><%= @artwork.height %> * <%= @artwork.width %> cm</p>
-<% end %>
-
-<p> 
-  <% unless @artwork.Technique.blank? %>
-    <%= @artwork.Technique.name %> 
-    <% unless @artwork.Material.blank? %>
-      på <%= @artwork.Material.name %>
+  <div id="image-container" class='row'>
+    <% unless @previous_artwork.blank? %>
+      <%= link_to '', artwork_path(@previous_artwork), :id=>'chevronleft', :class=>'col-md-1 absolute-center' %>
     <% end %>
-  <% end %>
+    <div class='col-md-10 absoulte-center'>
+      <h1 class='text-center'><%= @artwork.name %></h1>
+      <br />
+      <% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
+      <br />
+      <div class="fb-like" data-href=@fbLink data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+      <br />
+      <p><%= safe_join(@artwork.description.split("\r\n"), "<br />".html_safe) %></p>
+
+      <% if !@artwork.height.blank? && !@artwork.width.blank? %>
+        <p><%= @artwork.height %> * <%= @artwork.width %> cm</p>
+      <% end %>
+
+      <p> 
+        <% unless @artwork.Technique.blank? %>
+          <%= @artwork.Technique.name %> 
+          <% unless @artwork.Material.blank? %>
+            på <%= @artwork.Material.name %>
+          <% end %>
+        <% end %>
+      </p>
+
+      <p>
+        <% if @artwork.for_sale == true %>
+          <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
+        <% end %>
+      </p>
+
+      <% if user_signed_in? %>
+        <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
+      <% end %>
+    </div>
+    <% unless @next_artwork.blank? %>
+      <%= link_to '', artwork_path(@next_artwork), :id=>'chevron', :class=>'col-md-1 absolute-center' %>
+    <% end %>
+    <!-- <div id='chevron' class='col-md-1 absolute-center'></div> -->
+    <br />
+    <br />
+
+    </div>
 </p>
 
-<p>
-  <% if @artwork.for_sale == true %>
-    <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
-  <% end %>
-</p>
-
-<% if user_signed_in? %>
-  <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
-<% end %>
-
-<% if !@artwork.Collection_id.blank? %>
-  <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
-<% else %>
-  <%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
-<% end %>
 <br /><br /><br />
