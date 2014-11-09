@@ -60,6 +60,8 @@ gem 'contact_us', '~> 0.5.1'
 # Used for storing images at Google
 gem 'fog'
 
+gem 'will_paginate', '~> 3.0'
+
 group :production do
   gem 'rails_12factor'
 end

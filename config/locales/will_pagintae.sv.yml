@@ -1,0 +1,5 @@
+sv-SE:
+  will_paginate:
+    previous_label: "&#8592; Föregående"
+    next_label: "Nästa &#8594;"
+    page_gap: "&hellip;"

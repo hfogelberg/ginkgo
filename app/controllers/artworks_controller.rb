@@ -8,6 +8,7 @@ class ArtworksController < ApplicationController
       #@artworks = Artwork.all
       @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(16)
     else
+      @comment = Collection.find(params[:collectionId]).comment
       @artworks = Artwork.where(:Collection_id => params[:collectionId])
     end
   end

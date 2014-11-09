@@ -1,32 +1,30 @@
-<h1>Nyheter</h1>
-
 <table>
   <tbody>
     <% @news.each do |news| %>
       <tr>
         <td>
+            <%= image_tag news.image.thumb.to_s, :class=>'preview' %>
+        </td>
+        <td>
+          <h2><%= link_to news.header, news_path(news) %></h2>
           <p>
-            <h2><%= news.header %></h2>
-          </p>
-           <p>
-            <%= image_tag news.image.thumb.to_s %>
+            <%= truncate(news.body) %>
           </p>
           <p>
-            <%= news.body %>
+            <div class='text-muted'><%= news.created_at.to_date %></div>
           </p>
-          <% if user_signed_in? %>
-            <p>
-              <%= link_to 'Ändra', edit_news_path(news) %>
-              <%= link_to 'Ta bort', news, method: :delete, data: { confirm: 'Är du säker?' } %>
-            <p>
-          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br />
+  <div class='pagination'>
+    <%= will_paginate @forum_posts, :container => false %>
+  </div>
+<br />
+
 
 <% if user_signed_in? %>
   <%= link_to 'Lägg till', new_news_path %>

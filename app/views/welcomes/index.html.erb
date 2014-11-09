@@ -1,17 +1,46 @@
-<div class="jumbotron text-centre title">
+<div class="jumbotron">
 	<br>
-  <h1>Helena Fogelberg</h1>
-	<h3>Art and Design</h3>
+  <div class="text-centre title">
+    <h1>Helena Fogelberg</h1>
+  	<h3>Art and Design</h3>
+  </div>
 	<br>
-<section id="photos">
-  <% @artworks.each do |artwork| %>
-    <%= link_to (image_tag artwork.image.thumb.to_s), artwork_path(artwork) unless artwork.image.blank? %>
-  <% end %>
-</section>
-	<br>
-  <p>
-		<%= link_to 'Välkommen!', artworks_path, :class=>'btn btn-primary btn-lg' %>
-	</p>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <% for i in 1..@artworks.count %>
+        <li data-target="#carousel-example-generic" data-slide-to="#{i}"></li>
+      <% end %>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active carouselItem">
+        <%= link_to (image_tag @artworks.last.image.medium.to_s), artwork_path(@artworks.last) unless @artworks.last.image.blank? %>
+      </div>
+      	<% @artworks.each do |artwork| %>
+      		<div class="item carouselItem">
+      			<%= link_to (image_tag artwork.image.medium.to_s), artwork_path(artwork) unless artwork.image.blank? %>
+      		</div>
+    		<% end %>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+    <br>
+    <p>
+      <%= link_to 'Välkommen!', artworks_path, :class=>'btn btn-primary btn-lg' %>
+    </p>
+  </div>
 	<br>
 </div>
-

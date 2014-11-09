@@ -1,4 +1,10 @@
 
+<p>
+	<% unless @comment.blank? %>
+		<h4><%= safe_join(@comment.split("\r\n"), "<br />".html_safe) %></h4>
+	<% end %>
+</p>
+<br />
 <section id="photos">
   <% @artworks.each do |artwork| %>
     <%= link_to (image_tag artwork.image.thumb.to_s), artwork_path(artwork) unless artwork.image.blank? %>

@@ -1,51 +1,59 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'Åter', artworks_path, :class=>'btn btn-info' %>
-<br />
-<p>
-  <div id="image-container" class='row'>
-    <% unless @previous_artwork.blank? %>
-      <%= link_to '', artwork_path(@previous_artwork), :id=>'chevronleft', :class=>'col-md-1 absolute-center' %>
-    <% end %>
-    <div class='col-md-10 absoulte-center'>
-      <h1 class='text-center'><%= @artwork.name %></h1>
-      <br />
-      <% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s %><% end %>
-      <br />
-      <div class="fb-like" data-href=@fbLink data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-      <br />
-      <p><%= safe_join(@artwork.description.split("\r\n"), "<br />".html_safe) %></p>
 
-      <% if !@artwork.height.blank? && !@artwork.width.blank? %>
-        <p><%= @artwork.height %> * <%= @artwork.width %> cm</p>
+<div class='row'>
+  <div class='col-md-10 absolute-center'>
+      <br />
+        <h1 class='text-center title'><%= @artwork.name %></h1>
+      <br />
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-10 absolute-center'>
+      <% unless @artwork.image.blank?%><%= image_tag @artwork.image_url.to_s, :class=>'centerImage' %><% end %>
+  </div>
+  <div class='col-md-2'>
+    <div class='btn-toolbar' role='toolbar'>
+      <%= link_to '', artworks_path, :class=>'btn btn-default glyphicon glyphicon-home' %>      
+      <% unless @previous_artwork.blank? %>
+        <%= link_to '', artwork_path(@previous_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-left' %>
       <% end %>
-
-      <p> 
-        <% unless @artwork.Technique.blank? %>
-          <%= @artwork.Technique.name %> 
-          <% unless @artwork.Material.blank? %>
-            på <%= @artwork.Material.name %>
-          <% end %>
-        <% end %>
-      </p>
-
-      <p>
-        <% if @artwork.for_sale == true %>
-          <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
-        <% end %>
-      </p>
-
-      <% if user_signed_in? %>
-        <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
+      <% unless @next_artwork.blank? %>
+        <%= link_to '', artwork_path(@next_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-right' %>
       <% end %>
     </div>
-    <% unless @next_artwork.blank? %>
-      <%= link_to '', artwork_path(@next_artwork), :id=>'chevron', :class=>'col-md-1 absolute-center' %>
+    <br />
+    <p><%= safe_join(@artwork.description.split("\r\n"), "<br />".html_safe) %></p>
+
+    <% if !@artwork.height.blank? && !@artwork.width.blank? %>
+      <p><%= @artwork.height %> * <%= @artwork.width %> cm</p>
     <% end %>
-    <!-- <div id='chevron' class='col-md-1 absolute-center'></div> -->
+
+    <p> 
+      <% unless @artwork.Technique.blank? %>
+        <%= @artwork.Technique.name %>  
+        <% unless @artwork.Material.blank? %>
+          på <%= @artwork.Material.name %>
+        <% end %>
+      <% end %>
+    </p>
+
+    <p>
+      <% if @artwork.for_sale == true %>
+        <h5 class="text-success">Till salu pris <%= @artwork.price %> Kr</h5>
+      <% end %>
+    </p>
+
+    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
     <br />
     <br />
+    <a href="//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest" data-pin-do="buttonPin" data-pin-config="none" data-pin-color="red"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" /></a>
+    <!-- Please call pinit.js only once per page -->
+    <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 
-    </div>
-</p>
-
-<br /><br /><br />
+    <% if user_signed_in? %>
+    <br />
+    <br />
+      <%= link_to 'Ändra', edit_artwork_path(@artwork) %><br /><br />
+    <% end %>
+  </div>
+</div>

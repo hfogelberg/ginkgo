@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105153920) do
+ActiveRecord::Schema.define(version: 20141105155655) do
 
   create_table "artworks", force: true do |t|
     t.string   "name"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20141105153920) do
   add_index "artworks", ["Collection_id"], name: "index_artworks_on_Collection_id"
   add_index "artworks", ["Material_id"], name: "index_artworks_on_Material_id"
   add_index "artworks", ["Technique_id"], name: "index_artworks_on_Technique_id"
+
+  create_table "books", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "collections", force: true do |t|
     t.string   "name"
