@@ -68,6 +68,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+# Used to store sensitive configuration data 
+gem 'figaro'
+
 #gem ruby '2.0.0'
 
 # Use ActiveModel has_secure_password

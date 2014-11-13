@@ -1,0 +1,185 @@
+
+<div class='row'>
+  <div class='col-md-8 absolute-center'>
+
+    <h1>
+    <div class="text-centre">Böcker</div>
+      <small>
+      <p>
+        <%= image_tag('Wuffi.jpg', :width=>'30%', :class=>'textWrapLeft') %>
+      </p>
+      <p>   
+        Jag arbetar med två olika barnböcker som jag skriver och illustrerar. Böckerna kommer att ges ut under 2015. Förhoppningsvis i tryck, men om inte annat som e-böcker.
+      </p>
+      <p>
+        Den ena boken, som förmodligen kommer att heta Pips äventyr handlar om den uppfiningsrika hamsterflickan lilla Pip och
+        alla de andra undelriga vareleserna i skogen. Man kommer bland annat att lära känna Skofia, Råttan Åttan, Rutan och inte
+        minst de Äckliga Påcklingarna. Och vad skall man egentligen tro om Smygarleffe ...?
+      <p>
+        Den andra boken har jag kommit lite längre med och heter Wuffis resa. Jag bjuder på ett smakprov här nedan:
+      </p>
+    <br />
+    <br />
+    <br />
+    </small>
+    </h1>
+    <p>
+      <h3>KAPITEL 1 Hemma hos Sofia</h3>
+    </p>
+    <p>
+      <%= image_tag('Ch1Title.jpg', :width=>'80%', :class=>'centerImage') %>
+    </p>
+    <p>
+    Det var en alldeles vanlig morgon hemma hos Sofia. Hon sträckte på sig i sängen och gäspade stort.
+    </p>
+    <p>
+    ”Inte skola idag igen” sa hon till sig själv, suckade och reste sig upp för klä på sig. Veckan i skolan hade varit lång och nu var det fredag. Hon var trött och såg fram emot helgen. När hon klädde på sig småpratade hon med de tre vännerna som satt och tittade på henne från sängkanten. Hon hade döpt dem till Lilla Bruna Björnen, Woffi och Dodo. Sofia förmanade dem med orden: 
+    </p>
+    <p>
+    ”Nu får ni inte göra något dumt när jag är i skolan! Lova mig det!” 
+    </p>
+    <p>
+    Alla tre tittade på henne med en snäll och trofast blick. Sofia vände sig sedan om för att gå ut i köket och äta frukost. I dörröppningen sa hon till dem, nu i något snällare nästan bedjande ton: 
+    </p>
+    <p>
+    ”Inga dumheter nu! Lova mig det!” 
+    </p>
+    <p>
+    Sedan stängde hon till dörren och rummet blev ödsligt och tyst. 
+    </p>
+    <p>
+    ”Pust” sa Lilla Bruna Björnen som av sina två vänner kallades för Lilla Brun. 
+    </p>
+    <p>
+    ”Det var nära ögat! Jag trodde att vi skulle bli tvungna att följa med henne till skolan.” 
+    </p>
+    <p>
+    Lilla Brun skrattade. Han var lättad över att få vara hemma hela dagen och leka. Woffi och Dodo skrattade de också och när de hade slutat skratta sa Woffi: 
+    ”Sofia sa att vi inte fick göra några dumheter. Vad ska vi göra istället om vi nu inte får göra några dumheter? Har ni några förslag?” 
+    </p>
+    <p>
+    Lilla Brun svarade: 
+    </p>
+    <p>
+    ”Hon sa inget om att vi inte får gå ut. Jag tycker att vi ska gå ut i friska luften.” 
+    </p>
+    <p>
+    Dodo svarade i en drömmande ton: 
+    </p>
+    <p>
+    ”Allez! Jag kan sitta och spana i ett träd. Jag kan då se om jag får syn på något kul som vi kan göra!"" 
+    Dodo, som alltid sa ”allez” vilket betydde ”kom igen” på franska, tittade nu bedjande på sina vänner. Hon älskade att klättra upp i träd och gjorde det ytterst sällan.
+    </p> 
+    <p>
+    ”Ja, varför inte?” sa Woffi medan Lilla Brun nickade med sitt stora lurviga huvud. 
+    </p>
+    <p>
+    ”Visst!” sa Lilla Brun. 
+    </p>
+      <p>
+        <%= image_tag('OpeningDoor.jpg', :width=>'30%', :class=>'textWrapLeft') %>
+      </p>
+    <p>
+    De tre vännerna klättrade ner från sängen och gick mot dörren. Som tur var hade 
+    Sofia inte stängt dörren helt. Det fanns en liten glipa och de tre vännerna smög ut i köket. Sofia satt och åt frukost. Samtidigt tittade hon på en film på sin ipad och var så inne i filmen att de kunde smyga förbi henne bort till ytterdörren. När de väl var där ställde sig Lilla Brun på Woffis axlar. Sedan klättrade Dodo upp på Lilla Bruns rygg och hon sträckte på sig så mycket hon kunde efter dörrhandtaget. 
+    </p>
+    <p>
+    Med mycket vilja och styrka lyckades hon öppna dörren och de tre vännerna trillade ihop i en hög ute på trappan. 
+    </p>
+    <p>
+    ”Pust! Hur gick det?” sa Lilla Brun och reste sig upp utan att ha skadat sig. 
+    </p>
+    <p>
+    ”Woff! Bara bra!” sa Woffi. 
+    </p>
+    <p>
+    Dodo sa att hon bara hade fått lite skrubbsår på ena knäet, men att det som tur var inte blödde. Hon kravlade sig upp och tittade ut från trappan. 
+    </p>
+    <p>
+    ”Allez! Nu är vi ute” sa Dodo och lät blicken svepa över träden och buskarna runt huset. 
+    </p>
+    <p>
+    ”Kom vi går” sa Lilla Brun. 
+    </p>
+    <p>
+    De tre började gå i tre olika riktningar och när de hade gått en bit tittade alla bakåt samtidigt. 
+    </p>
+    <p>
+    ”Men...” sa Lilla Brun, ”ska vi inte gå tillsammans?” 
+    </p>
+    <p>
+    ”Woff! Det är klart vi ska!”sa Woffi och ylade till av glädje. 
+    </p>
+    <p>
+    De tre gick tillbaka till trappan. Vem skul- le nu bestämma vilken riktning de skulle gå? tänkte Lilla Brun. Han kom och tänka på ramsan som Sofia brukade dra och som han nu kunde använda sig av: 
+    </p>
+    <p>
+    ”Ole, dole, doff. Kinke, lane, koff. Koffe, lane, binke, bane. Ole, dole, doff!” sa Lilla Brun och pekade i slutet på sig själv. 
+    </p>
+    <p>
+    ”Det blir jag som får bestämma” sa han triumferande. 
+    </p>
+    <p>
+    ”Du fuskade!” sa Dodo surt. ”Gör det en gång till annars vill inte jag följa med er. Då går jag själv!” 
+    </p>
+    <p>
+    Lilla Brun blev ledsen och sa att han inte alls hade fuskat, men han kunde visst gö- ra om det så att alla blev nöjda. Denna gång drog han ramsan sakta och tydligt så att de inte kunde anklaga honom för att fuska: 
+    </p>
+    <p>
+    ”Ole...dole..doff....” 
+    </p>
+    <p>
+    Denna gång pekade han på sig själv igen och då sa Dodo att det inte var mycket mer att göra än att låta honom bestämma åt vilket håll de skulle gå. 
+    </p>
+    <p>
+    ”Ditåt” sa han och pekade i riktning mot havet. När de hade hunnit gå några steg hörde de ytterdörren öppnas och de hann precis kasta sig bakom en rododendronbuske som skydd. Sofia stod på trappan och tittade uppåt mot himlen. Hennes skolväska hängde på ryggen och hon såg glad ut. 
+    </p>
+    <p>
+    ”Hon är på väg till skolbussen.” sa Lilla Brun mycket tyst. 
+    </p>
+    <p>
+    ”Woff! Ska vi följa efter henne och se hur bussen ser ut. Jag har alltid undrat hur en skolbuss ser ut!” sa Woffi lite för entusiastiskt och högt så Lilla Brun fick hyssja åt honom. 
+    </p>
+    <p>
+    Woffi fortsatte, nu i viskande ton: 
+    </p>
+    <p>
+    ”Vi smyger bakom henne och ser vart hon tar vägen. Vi kan gå till havet sen.” 
+    </p>
+    <p>
+    Sofia gick med bestämda steg framåt och de tre vännerna smög bakom henne från buske till buske. När Sofia vände sig bakåt några gånger hann de precis sätta sig i säkerhet bakom ett träd. 
+    </p>
+    <p>
+    ”Pust” sa Dodo ”Värst vad hon tittar bakåt. Det är som hon misstänker att vi är bakom henne.” 
+    </p>
+    <p>
+    De fick se en stor gul buss köra fram och då fick Sofia bråttom. Hon sprang fort och den stora ryggsäcken dunkade henne hårt i ryggen. 
+    </p>
+    <p>
+      <%= image_tag('WuffiRuns.jpg', :width=>'30%', :class=>'textWrapLeft') %>
+    </p>
+    <p>
+    ”Allez! Vad bråttom hon fick. Värsta språngmarschen ju!” sa Dodo beundrande. 
+    </p>
+    <p>
+    ”Woff! Jag vill springa med” sa Woffi längtansfull. ”Jag har aldrig i hela mitt liv fått springa så fort”. 
+    </p>
+    <p>
+    Utan att tänka på att någon kunde se ho- nom klev han fram bakom trädet de hade gömt sig bakom och han satte fart mot bussen. Han såg Sofia och flera andra barn kliva på bussen. Det enda Woffi tänkte på var att springa fram till bussen och efter Sofia. Han hade aldrig trott att han kunde springa så fort. Dodo och Lilla Brun ropade desperat efter honom: 
+    </p>
+    <p>
+    ”Woffi! Kom tillbaka. Akta dig det är farligt...” 
+    <p>
+    Mer hörde inte Woffi. Han kastade sig in i bussen precis innan dörrarna stängdes och bussen började köra. Dodo och Lilla Brun de tittade förskräckt på varandra. Woffi var borta.
+    </p>
+    <p> 
+    ”Så förfärligt! Stackars Woffi!” skrek Dodo upprört. 
+    </p>
+    <br />
+    <br />
+    <div class="alert alert-success" role="alert">
+      Den spännande fortsättningen följer ...
+    </div>
+  </div>
+</div>
+
