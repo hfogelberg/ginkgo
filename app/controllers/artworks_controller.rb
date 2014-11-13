@@ -26,10 +26,11 @@ class ArtworksController < ApplicationController
     id = params[:id]
 
     if params[:collectionId].blank?
+      logger.debug "Painting is not in a collection"
       Artwork.where("id > ?", id).first
     else
-      collectionId = params[:collectionId]
-      Artwork.where(:Collection_id=>1).where("id>?", collectionId).first
+      @collectionId = params[:collectionId]
+      Artwork.where(:Collection_id=>@collectionId).where("id>?", id).first
     end
   end
 
@@ -39,8 +40,8 @@ class ArtworksController < ApplicationController
     if params[:collectionId].blank?
       Artwork.where("id < ?", id).last
     else
-      collectionId = params[:collectionId]
-      Artwork.where(:Collection_id=>1).where("id<?", collectionId).last
+      @collectionId = params[:collectionId]
+      Artwork.where(:Collection_id=>@collectionId).where("id<?", id).last
     end
   end
 

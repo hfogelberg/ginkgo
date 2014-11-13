@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <div class='row'>
   <div class='col-md-10 absolute-center'>
       <br />
@@ -18,7 +17,7 @@
         <%= link_to '', artwork_path(@previous_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-left' %>
       <% end %>
       <% unless @next_artwork.blank? %>
-        <%= link_to '', artwork_path(@next_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-right' %>
+        <%= link_to '', artwork_path(@next_artwork, :collectionId=>@collectionId), :class=>'btn btn-default glyphicon glyphicon-arrow-right' %>
       <% end %>
     </div>
     <br />
