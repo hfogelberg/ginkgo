@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_user_language
 
   def get_collections
-  	@collections = Collection.all
+  	@collections = Collection.all.order_by('name ASC')
   end
 
   def set_user_language

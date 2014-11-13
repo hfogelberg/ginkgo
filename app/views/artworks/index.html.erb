@@ -1,4 +1,10 @@
-
+<p>
+	<% unless @header.blnak? %>
+		<div class='absolute-center'>
+    	<h1 class='text-center title'><%= @header %></h1>
+    </div>
+	<% end %>
+</p>
 <p>
 	<% unless @comment.blank? %>
 		<h4><%= safe_join(@comment.split("\r\n"), "<br />".html_safe) %></h4>

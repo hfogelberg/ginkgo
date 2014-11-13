@@ -9,6 +9,7 @@ class ArtworksController < ApplicationController
       @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(16)
     else
       @comment = Collection.find(params[:collectionId]).comment
+      @header = Collection.find(params[:collectionId]).name
       @artworks = Artwork.where(:Collection_id => params[:collectionId])
     end
   end
