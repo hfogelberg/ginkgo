@@ -12,7 +12,8 @@
   </div>
   <div class='col-md-2'>
     <div class='btn-toolbar' role='toolbar'>
-      <%= link_to '', artworks_path, :class=>'btn btn-default glyphicon glyphicon-home' %>      
+      <%= link_to '', artworks_path, :class=>'btn btn-default glyphicon glyphicon-home' %>  
+      <br />    
       <% unless @previous_artwork.blank? %>
         <%= link_to '', artwork_path(@previous_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-left' %>
       <% end %>
