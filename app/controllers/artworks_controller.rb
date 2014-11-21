@@ -23,26 +23,50 @@ class ArtworksController < ApplicationController
   end
 
   def get_next
+    logger.debug "*** get_next ***"
     id = params[:id]
 
+    logger.debug "*** id: #{id}, collection id #{params[:collectionId]}"
+
     if params[:collectionId].blank?
-      logger.debug "Painting is not in a collection"
-      Artwork.where("id > ?", id).first
+      logger.debug "*** Painting is not in a collection ***"
+      art = Artwork.where("id > ?", id).first
+      if !art
+        logger.debug "*** Fetching first artwork ***"
+        art = Artwork.first
+      end
     else
+      logger.debug "*** Painting is in a collection ***"
       @collectionId = params[:collectionId]
-      Artwork.where(:Collection_id=>@collectionId).where("id>?", id).first
+      art = Artwork.where(:Collection_id=>@collectionId).where("id>?", id).first
+      if !art
+        logger.debug "*** Getting first painting in collection ***"
+        art = Artwork.where(:Collection_id=>@collectionId).first
+      end
     end
+
+    logger.debug "*** Next artwork: #{art.id}"
+    return art.id
   end
 
   def get_previous
     id = params[:id]
 
     if params[:collectionId].blank?
-      Artwork.where("id < ?", id).last
+      art = Artwork.where("id < ?", id).last
+      if !art
+        art = Artwork.last
+      end
     else
       @collectionId = params[:collectionId]
-      Artwork.where(:Collection_id=>@collectionId).where("id<?", id).last
+      art = Artwork.where(:Collection_id=>@collectionId).where("id<?", id).last
+      if !art
+        art = Artwork.where(:Collection_id=>@collectionId).last
+      end
     end
+
+    logger.debug "*** previous artwork #{art.id}"
+    return art.id
   end
 
   # GET /artworks/new
