@@ -10,6 +10,7 @@
     <%= f.association :Technique, :label=>'Teknik' %>
     <%= f.association :Material, :label=>'Material' %>
     <%= f.input :price, :label=>'Pris', :as=>:string %>
+    <%= f.input :show, :label=>'Visa' %> <br />
     <%= f.input :for_sale, :label=>'Till salu' %><br /><br />
     <%= f.file_field :image, :label=>'Bild' %>
   </div>

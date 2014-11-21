@@ -18,10 +18,10 @@
         <%= link_to '', artworks_path(:collectionId => @collectionId), :class=>'btn btn-default glyphicon glyphicon-home' %>  
       <% end %>
       <br />    
-      <% unless @previous_artwork.blank? %>
+      <% if @previous_artwork > 0 %>
         <%= link_to '', artwork_path(@previous_artwork), :class=>'btn btn-default glyphicon glyphicon-arrow-left' %>
       <% end %>
-      <% unless @next_artwork.blank? %>
+      <% if @next_artwork > 0 %>
         <%= link_to '', artwork_path(@next_artwork, :collectionId=>@collectionId), :class=>'btn btn-default glyphicon glyphicon-arrow-right' %>
       <% end %>
     </div>

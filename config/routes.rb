@@ -11,6 +11,8 @@ Ginkgo::Application.routes.draw do
 
   resources :artworks
 
+  get 'admin' => 'artworks#admin'
+
   resources :collections
 
   resources :materials

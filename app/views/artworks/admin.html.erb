@@ -1,0 +1,11 @@
+<section id="photos">
+  <% @artworks.each do |artwork| %>
+   	<%= link_to (image_tag artwork.image.thumb.to_s), edit_artwork_path(artwork) unless artwork.image.blank? %>
+  <% end %>
+</section>
+
+<br />
+  <div class='pagination'>
+    <%= will_paginate @artworks, :container => false %>
+  </div>
+<br />

@@ -6,12 +6,16 @@ class ArtworksController < ApplicationController
   def index    
     if params[:collectionId].blank?
       #@artworks = Artwork.all
-      @artworks = Artwork.where(:for_sale=>true).order("RANDOM()").limit(16)
+      @artworks = Artwork.where(:for_sale=>:true).where(:show=>:true).order("RANDOM()").limit(16)
     else
       @comment = Collection.find(params[:collectionId]).comment
       @header = Collection.find(params[:collectionId]).name
       @artworks = Artwork.where(:Collection_id => params[:collectionId])
     end
+  end
+
+  def admin
+    @artworks = Artwork.all.paginate(:page => params[:page], :per_page => 8)
   end
 
   # GET /artworks/1
@@ -23,50 +27,51 @@ class ArtworksController < ApplicationController
   end
 
   def get_next
-    logger.debug "*** get_next ***"
     id = params[:id]
-
-    logger.debug "*** id: #{id}, collection id #{params[:collectionId]}"
 
     if params[:collectionId].blank?
       logger.debug "*** Painting is not in a collection ***"
-      art = Artwork.where("id > ?", id).first
+      art = Artwork.where(:show=>true).where("id > ?", id).first
       if !art
-        logger.debug "*** Fetching first artwork ***"
         art = Artwork.first
       end
     else
       logger.debug "*** Painting is in a collection ***"
       @collectionId = params[:collectionId]
-      art = Artwork.where(:Collection_id=>@collectionId).where("id>?", id).first
+      art = Artwork.where(:Collection_id=>@collectionId).where(:show=>:true).where("id>?", id).first
       if !art
-        logger.debug "*** Getting first painting in collection ***"
-        art = Artwork.where(:Collection_id=>@collectionId).first
+        art = Artwork.where(:Collection_id=>@collectionId).where(:show=>:true).first
       end
     end
 
-    logger.debug "*** Next artwork: #{art.id}"
-    return art.id
+    if art
+      return art.id
+    else
+      return 0
+    end
   end
 
   def get_previous
     id = params[:id]
 
     if params[:collectionId].blank?
-      art = Artwork.where("id < ?", id).last
+      art = Artwork.where(:show=>true).where("id < ?", id).last
       if !art
         art = Artwork.last
       end
     else
       @collectionId = params[:collectionId]
-      art = Artwork.where(:Collection_id=>@collectionId).where("id<?", id).last
+      art = Artwork.where(:Collection_id=>@collectionId).where(:show=>:true).where("id<?", id).last
       if !art
-        art = Artwork.where(:Collection_id=>@collectionId).last
+        art = Artwork.where(:Collection_id=>@collectionId).where(:show=>:true).last
       end
     end
 
-    logger.debug "*** previous artwork #{art.id}"
-    return art.id
+    if art
+      return art.id
+    else
+      return 0
+    end
   end
 
   # GET /artworks/new
